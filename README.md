@@ -18,26 +18,26 @@ We have the following entities:
 - Request *(userId, createdAt, updatedAt, status, price)*
 
 The main endpoints here are:
-- Requests
+Requests
  - *GET /requests*
  - *GET /requests/{id}*
  - *POST /requests with branchId, productId, price*
  - *PUT /requests with requestId, status*
  - *DELETE /requests/{id}*
 
-- Products
+Products
  - *GET /products* [Done]
  - *GET /products/{id}* [Done]
  - *POST /products with name, price* [Done]
 
-- Users
+Users
  - *GET /users* 
  - *GET /users/{id}*
  - *POST /users with name, role*
  - *PUT /users*
  - *DELETE /users/{id}*
 
-- Branches
+Branches
  - *GET /branches*
  - *GET /branches/{id}*
  - *POST /branches with name, budget*
