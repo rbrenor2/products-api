@@ -1,4 +1,5 @@
 # Products API
+*Since most of the projects I built with Spring Boot were for companies I worked with, this API was built only to showcase a bit some of my experience with this framework and tries to emulate some of the use cases I already had to deal with.
 
 The Products API helps supermarket chains to manage product records from their branches and also manage price changes requests that come from each branch manager, when a product is about to go bad and needs to be sold quickly.
 
