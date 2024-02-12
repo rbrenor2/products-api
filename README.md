@@ -30,6 +30,8 @@ Products
  - *GET /products* [Done]
  - *GET /products/{id}* [Done]
  - *POST /products with name, price* [Done]
+ - *PUT /products with name, price* [Done]
+ - *DELETE /products/{id}* [Done]
 
 Users
  - *GET /users* 
