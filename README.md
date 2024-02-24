@@ -34,18 +34,21 @@ Products
  - *DELETE /products/{id}* [Done]
 
 Users
- - *GET /users* 
- - *GET /users/{id}*
- - *POST /users with name, role*
- - *PUT /users*
- - *DELETE /users/{id}*
+ - *GET /users* [Done]
+ - *GET /users/{id}* [Done]
+ - *POST /users with name, role* [Done]
+ - *PUT /users* [Done]
+ - *DELETE /users/{id}* [Done]
 
 Branches
- - *GET /branches*
- - *GET /branches/{id}*
- - *POST /branches with name, budget*
- - *PUT /branches/{id}*
- - *DELETE /branches/{id}*
+ - *GET /branches* [Done]
+ - *GET /branches/{id}* [Done]
+ - *POST /branches with name, budget* [Done]
+ - *PUT /branches/{id}* [Done]
+ - *DELETE /branches/{id}* [ Done]
 
+Roles
+- *GET /roles* [Done]
+- *POST /roles with name* [Done]
 
 
