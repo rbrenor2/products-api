@@ -9,6 +9,6 @@ import java.math.BigDecimal;
 // Record class type is available in Java 16
 // - Record comes with
     // - Getters, toString(), they are immutable, private and final by default
-public record RoleRecordDto(@NotBlank  String name) {
+public record RequestRecordDto(@NotNull String userId, @NotNull String productId, @NotNull BigDecimal newPrice, String status) {
 
 }

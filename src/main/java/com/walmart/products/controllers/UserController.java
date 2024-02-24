@@ -1,12 +1,10 @@
 package com.walmart.products.controllers;
 
-import com.walmart.products.dtos.BranchRecordDto;
 import com.walmart.products.dtos.UserRecordDto;
+import com.walmart.products.enums.Roles;
 import com.walmart.products.models.BranchModel;
-import com.walmart.products.models.RoleModel;
 import com.walmart.products.models.UserModel;
 import com.walmart.products.repositories.BranchRepository;
-import com.walmart.products.repositories.RoleRepository;
 import com.walmart.products.repositories.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -26,9 +24,6 @@ public class UserController {
     UserRepository userRepository;
 
     @Autowired
-    private RoleRepository roleRepository; // Assuming you have a RoleRepository for saving Role entities
-
-    @Autowired
     private BranchRepository branchRepository; // Assuming you have a BranchRepository for saving Branch entities
 
 
@@ -39,11 +34,12 @@ public class UserController {
 
         BeanUtils.copyProperties(userRecordDto, userModel);
 
-        RoleModel role = roleRepository.findById(UUID.fromString(userRecordDto.roleId().getName())).orElse(null);
-        BranchModel branch = branchRepository.findById(userRecordDto.branchId().getId()).orElse(null);
+        BranchModel branch = branchRepository.findById(UUID.fromString(userRecordDto.branchId())).orElse(null);
 
-        userModel.setRoleId(role);
-        userModel.setBranchId(branch);
+        var role = Roles.valueOf(userRecordDto.role());
+
+        userModel.setRole(role.getValue());
+        userModel.setBranch(branch);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(userRepository.save(userModel)); // save() comes from the repository type
     }

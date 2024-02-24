@@ -16,15 +16,15 @@ We have the following entities:
 - Product *(name, price)*
 - Branch *(name, budget)*
 - User *(name, role=Analyst, Manager, email)*
-- Request *(userId, createdAt, updatedAt, status, price)*
+- Request *(userId, createdAt, updatedAt, status, newPrice product)*
 
 The main endpoints here are:
 Requests
- - *GET /requests*
- - *GET /requests/{id}*
- - *POST /requests with branchId, productId, price*
- - *PUT /requests with requestId, status*
- - *DELETE /requests/{id}*
+ - *GET /requests* [Done]
+ - *GET /requests/{id}* [Done]
+ - *POST /requests with branchId, productId, newPrice, status?* [Done]
+ - *PUT /requests with requestId, status* [Done]
+ - *DELETE /requests/{id}* [Done]
 
 Products
  - *GET /products* [Done]
@@ -51,4 +51,8 @@ Roles
 - *GET /roles* [Done]
 - *POST /roles with name* [Done]
 
-
+### Next steps
+- Add authentication
+- Add HATEOAS
+- Create a common response structure for the endpoints
+- Add Swagger documentation

@@ -2,9 +2,12 @@ package com.walmart.products.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -18,13 +21,21 @@ public class UserModel implements Serializable {
 
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private @NotBlank RoleModel roleId;
+    private @NotBlank String role;
 
     @ManyToOne
     @JoinColumn(name = "branch_id")
-    private BranchModel branchId;
+    private BranchModel branch;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private Date createdAt;
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated_at", nullable = false, updatable = true)
+    private Date updatedAt;
 
     public UUID getId() {
         return id;
@@ -42,19 +53,19 @@ public class UserModel implements Serializable {
         this.name = name;
     }
 
-    public RoleModel getRoleId() {
-        return roleId;
+    public String getRole() {
+        return role;
     }
 
-    public void setRoleId(@NotBlank RoleModel roleId) {
-        this.roleId = roleId;
+    public void setRole(@NotBlank String role) {
+        this.role = role;
     }
 
-    public BranchModel getBranchId() {
-        return branchId;
+    public BranchModel getBranch() {
+        return branch;
     }
 
-    public void setBranchId(@NotBlank BranchModel branchId) {
-        this.branchId = branchId;
+    public void setBranch(BranchModel branch) {
+        this.branch = branch;
     }
 }

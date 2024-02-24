@@ -1,6 +1,5 @@
 package com.walmart.products.repositories;
 
-import com.walmart.products.models.RoleModel;
 import com.walmart.products.models.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
